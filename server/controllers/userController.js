@@ -2,7 +2,7 @@ import userModel from "../models/userModel.js";
 
 export const getUserData = async (req, res) => {
     try {
-        const userId = req.userId; // ✅ token'dan geliyor
+        const userId = req.userId; 
 
         const user = await userModel.findById(userId);
         if (!user) {
@@ -13,7 +13,7 @@ export const getUserData = async (req, res) => {
             success: true,
             userData: {
                 name: user.name,
-                isAccountVerified: user.isAccountVerified // ✅ yazım hatası düzeltildi
+                isAccountVerified: user.isAccountVerified 
             }
         });
 

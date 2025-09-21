@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
 import { assets } from '../assets/assets';
 import { useNavigate } from 'react-router-dom';
-import { AppContext } from '../context/AppContext'; // Düzeltilmiş import
+import { AppContext } from '../context/AppContext'; 
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
 const Navbar = () => {
     const navigate = useNavigate();
-    const { userData, backendUrl, setUserData, setIsLoggedin } = useContext(AppContext); // Düzeltilmiş context
+    const { userData, backendUrl, setUserData, setIsLoggedin } = useContext(AppContext); 
 
     const sendVerificationOtp = async () => {
         try {

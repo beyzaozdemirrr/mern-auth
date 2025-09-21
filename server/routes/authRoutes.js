@@ -14,9 +14,9 @@ authRouter.post('/send-verify-otp', userAuth, sendVerifyOtp);
 authRouter.post('/verify-account', userAuth, verifyEmail);
 authRouter.get('/is-auth', userAuth, isAuthenticated);
 
-// 🔹 Reset password routes
-authRouter.post('/send-reset-otp', sendResetOtp);        // OTP gönderme
-authRouter.post('/verify-reset-otp', (req, res, next) => { // OTP doğrulama
+
+authRouter.post('/send-reset-otp', sendResetOtp);       
+authRouter.post('/verify-reset-otp', (req, res, next) => { 
   const { email, otp } = req.body;
   if (!email || !otp) return res.status(400).json({ success: false, message: "Email and OTP required" });
 
